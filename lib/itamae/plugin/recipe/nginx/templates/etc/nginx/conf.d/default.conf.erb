@@ -8,6 +8,9 @@ server {
     location / {
         root   <%= @nginx_root_location %>;
         index  index.html index.htm;
+        proxy_no_cache 1;
+        proxy_cache_bypass 1;
+        sendfile off;
     }
 
     #error_page  404              /404.html;
